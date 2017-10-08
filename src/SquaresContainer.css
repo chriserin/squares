@@ -1,0 +1,31 @@
+.SquaresContainer {
+  text-align: center;
+}
+
+.SquaresContainer-logo {
+  animation: SquaresContainer-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.SquaresContainer-header {
+  background-color: #222;
+  height: 150px;
+  color: white;
+}
+
+.SquaresContainer-title {
+  font-size: 1.5em;
+}
+
+.SquaresContainer-intro {
+  font-size: large;
+}
+
+.SquaresContainer .square {
+  height: 100px;
+  width: 100px;
+  background-color: lightblue;
+  border: none ;
+  float: left;
+}
+
