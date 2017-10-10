@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react';
 import './SquaresContainer.css';
 import join from 'lodash/join';
@@ -79,11 +78,24 @@ class SquaresContainer extends Component {
     };
 
     this.shrinkCorner = this.shrinkCorner.bind(this);
+    this.shrinkAll = this.shrinkAll.bind(this);
     this.shuffle = this.shuffle.bind(this);
   }
 
   shrinkCorner(corner) {
     this.setState((prevState, props) => ({ [`${corner}_in`]: prevState[`${corner}_in`] + 4 }))
+  }
+
+  shrinkAll() {
+    this.setState((prevState, props) => (
+        {
+          t_in: prevState.t_in + 4,
+          r_in: prevState.r_in + 4,
+          b_in: prevState.b_in + 4,
+          l_in: prevState.l_in + 4,
+        }
+      )
+    )
   }
 
   shuffle() {
@@ -113,6 +125,9 @@ class SquaresContainer extends Component {
         </button>
         <button onClick={ () => this.shrinkCorner('l') } >
           Shrink L
+        </button>
+        <button onClick={ this.shrinkAll } >
+          All
         </button>
         <button onClick={ this.shuffle } >
           Shuffle
